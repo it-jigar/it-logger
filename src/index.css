@@ -1,0 +1,17 @@
+.navigation-bar {
+  margin-bottom: 30px;
+}
+
+.add-modal,
+.edit-modal {
+  width: 75%;
+  height: 75%;
+}
+
+.modal-content h4 {
+  margin-bottom: 50px;
+}
+
+#tech-list-modal {
+  padding: 20px;
+}
