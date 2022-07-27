@@ -15,11 +15,32 @@
       "date": "2022-07-27T20:14:14.668Z"
     },
     {
+      "id": 6,
+      "message": "Workstation 004 is up and running",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2022-07-27T23:48:26.300Z"
+    },
+    {
       "message": "Workstation 020 is down",
-      "tech": "Jhon Doe",
+      "tech": "Sam Smith",
       "attention": true,
-      "date": "2022-07-27T17:57:35.587Z",
-      "id": 5
+      "date": "2022-07-27T23:49:06.760Z",
+      "id": 7
+    },
+    {
+      "message": "Internet is down on workstation 050",
+      "tech": "Sara Wilson",
+      "attention": true,
+      "date": "2022-07-27T23:49:53.472Z",
+      "id": 8
+    },
+    {
+      "message": "System is updating on workstation 025",
+      "tech": "Jhon Doe",
+      "attention": false,
+      "date": "2022-07-27T23:50:34.264Z",
+      "id": 9
     }
   ],
   "techs": [

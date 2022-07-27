@@ -82,6 +82,17 @@ export const LogProvider = ({ children }) => {
     })
   }
 
+  // Search from System logs
+  const searchLogs = async (text) => {
+    const response = await fetch(`/logs?q=${text}`)
+    const data = await response.json()
+
+    dispatch({
+      type: 'SEARCH_LOGS',
+      payload: data,
+    })
+  }
+
   return (
     <LogContext.Provider
       value={{
@@ -94,6 +105,7 @@ export const LogProvider = ({ children }) => {
         updateLog,
         setCurrentLog,
         clearCurrentLog,
+        searchLogs,
       }}
     >
       {children}
