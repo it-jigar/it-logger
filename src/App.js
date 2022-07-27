@@ -6,6 +6,7 @@ import AddLogModal from './components/logs/AddLogModal'
 import EditLogModal from './components/logs/EditLogModal'
 import AddTechModal from './components/techs/AddTechModal'
 import TechListModal from './components/techs/TechListModal'
+import { LogProvider } from './contex/log/LogContex'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
@@ -16,7 +17,7 @@ function App() {
     M.AutoInit()
   })
   return (
-    <>
+    <LogProvider>
       <SearchBar />
       <div className='container'>
         <AddBtn />
@@ -26,7 +27,7 @@ function App() {
         <TechListModal />
         <Logs />
       </div>
-    </>
+    </LogProvider>
   )
 }
 

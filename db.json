@@ -1,28 +1,27 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 005",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Smith"
-    },
-    {
-      "id": 2,
-      "message": "Workstation 007 not posting",
-      "attention": true,
-      "date": "03-02-2019",
-      "tech": "John Doe"
-    },
-    {
       "id": 3,
-      "message": "Changed memory on workstation 015",
+      "message": "Server 002 is now online",
       "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sara Wilson"
+      "tech": "Jhon Doe",
+      "date": "2022-07-27T20:34:36.327Z"
+    },
+    {
+      "id": 4,
+      "message": "Workstation 022 is now up and running",
+      "attention": false,
+      "tech": "Sara Wilson",
+      "date": "2022-07-27T20:14:14.668Z"
+    },
+    {
+      "message": "Workstation 020 is down",
+      "tech": "Jhon Doe",
+      "attention": true,
+      "date": "2022-07-27T17:57:35.587Z",
+      "id": 5
     }
   ],
-
   "techs": [
     {
       "id": 1,

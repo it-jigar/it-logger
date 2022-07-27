@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import LogContext from '../../contex/log/LogContex'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
 function AddLogModal() {
@@ -6,12 +7,20 @@ function AddLogModal() {
   const [attention, setAttention] = useState(false)
   const [tech, setTech] = useState('')
 
+  const { addLog } = useContext(LogContext)
+
   const onSubmit = () => {
     if (message === '' || tech === '') {
       M.toast({ html: 'Please enter a message and tech' })
     } else {
-      console.log(message, attention, tech)
-
+      const newLog = {
+        message,
+        tech,
+        attention,
+        date: new Date(),
+      }
+      addLog(newLog)
+      M.toast({ html: `Log added by ${tech}` })
       setMessage('')
       setAttention(false)
       setTech('')
