@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react'
+import TechSelectOptions from '../techs/TechSelectOptions'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import LogContext from '../../contex/log/LogContex'
 
@@ -66,9 +67,7 @@ function EditLogModal() {
               <option value='' disabled>
                 Select Technician
               </option>
-              <option value='Jhon Doe'>John Doe</option>
-              <option value='Sam Smith'>Sam Smith</option>
-              <option value='Sara Wilson'>Sara Wilson</option>
+              <TechSelectOptions />
             </select>
           </div>
         </div>

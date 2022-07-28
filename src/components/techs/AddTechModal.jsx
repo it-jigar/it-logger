@@ -1,16 +1,22 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import M from 'materialize-css/dist/js/materialize.min.js'
+import TechContext from '../../contex/tech/TechContex'
 
 function AddTechModal() {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
 
+  const { addTech } = useContext(TechContext)
+
   const onSubmit = () => {
     if (firstName === '' || lastName === '') {
       M.toast({ html: 'Please enter a first and last name' })
     } else {
-      console.log(firstName, lastName)
-
+      const newTech = {
+        firstName,
+        lastName,
+      }
+      addTech(newTech)
       setFirstName('')
       setLastName('')
     }

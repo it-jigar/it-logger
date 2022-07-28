@@ -1,12 +1,19 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import LogContext from '../../contex/log/LogContex'
 
 function SearchBar() {
-  const { searchLogs } = useContext(LogContext)
+  const [text, setText] = useState('')
 
-  const logSearchFun = (e) => {
-    console.log(e.target.value)
+  const { searchLogs, getLogs } = useContext(LogContext)
+
+  const handleSearchLogs = (e) => {
+    setText(e.target.value)
     searchLogs(e.target.value)
+  }
+
+  const handleClose = () => {
+    setText('')
+    getLogs()
   }
 
   return (
@@ -18,12 +25,15 @@ function SearchBar() {
               id='search'
               type='search'
               placeholder='Search Logs...'
-              onChange={logSearchFun}
+              value={text}
+              onChange={handleSearchLogs}
             />
             <label className='label-icon' htmlFor='serarch'>
               <i className='material-icons'>search</i>
             </label>
-            <i className='material-icons'>close</i>
+            <i className='material-icons' onClick={handleClose}>
+              close
+            </i>
           </div>
         </form>
       </div>

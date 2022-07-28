@@ -1,22 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
+import TechContext from '../../contex/tech/TechContex'
 import TechItem from './TechItem'
 
 function TechListModal() {
-  const [techs, setTechs] = useState([])
-  const [loading, setLoading] = useState(false)
+  const { techs, loading, getTechs } = useContext(TechContext)
 
   useEffect(() => {
     getTechs()
+    // eslint-disable-next-line
   }, [])
-
-  const getTechs = async () => {
-    setLoading(true)
-    const response = await fetch('/techs')
-    const data = await response.json()
-
-    setTechs(data)
-    setLoading(false)
-  }
 
   return (
     <div>
@@ -25,6 +17,7 @@ function TechListModal() {
           <h4>Technician List</h4>
           <ul className='collection'>
             {!loading &&
+              techs !== null &&
               techs.map((tech) => <TechItem tech={tech} key={tech.id} />)}
           </ul>
         </div>
